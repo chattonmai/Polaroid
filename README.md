@@ -8,7 +8,7 @@ View and manage images in your workspace: thumbnail grid, large preview, copy Ba
 
 ## Install
 
-**From a `.vsix` (sideload):**
+**From a **`.vsix`** (sideload):**
 
 ```bash
 code --install-extension polaroid-1.0.0.vsix
@@ -16,7 +16,7 @@ code --install-extension polaroid-1.0.0.vsix
 
 Or in VS Code: **Extensions** panel → `⋯` menu → **Install from VSIX…** → pick `polaroid-1.0.0.vsix`.
 
-**Build the `.vsix` yourself:**
+**Build the **`.vsix`** yourself:**
 
 ```bash
 npx vsce package   # produces polaroid-<version>.vsix in the project root
