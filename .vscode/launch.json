@@ -1,0 +1,33 @@
+// A launch configuration that compiles the extension and then opens it inside a new window.
+//
+// preLaunchTask "Watch Extension": yarn watch + yarn ui-watch (background). If you see
+// "command … not found" after yarn install, use "Run Extension (build first)" once, or run
+// `yarn ui-build && yarn compile` in a terminal before F5.
+// Outputs: extension → dist/, webview → distWebview/.
+//
+// Browser-only / HMR: run `yarn ui-dev` in another terminal (webpack-dev-server; this template
+// uses port 5000 by default). On http origins, @easy_vscode/webview does not call acquireVsCodeApi;
+// callVscode posts to a no-op unless you mock postMessage / window "message" (e.g. vscodeCallback).
+//
+// https://go.microsoft.com/fwlink/?linkid=830387
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--disable-extensions", "--extensionDevelopmentPath=${workspaceFolder}"],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "preLaunchTask": "Watch Extension"
+    },
+    {
+      "name": "Run Extension (build first)",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--disable-extensions", "--extensionDevelopmentPath=${workspaceFolder}"],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "preLaunchTask": "Build Extension & Webview"
+    }
+  ]
+}
